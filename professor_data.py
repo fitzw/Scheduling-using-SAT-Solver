@@ -11,9 +11,10 @@
 #     wr.writerow(mylist)
 
 
-# In[18]:
+# In[27]:
 
 import random as rd
+import csv
 Course_number = 50
 
 
@@ -46,7 +47,14 @@ for k in P:
 P
 
 
-# In[ ]:
+# In[32]:
 
-
+# with open('Prof_data.csv', 'w') as f:  # Just use 'w' mode in 3.x
+#     w = csv.DictWriter(f, P.keys())
+#     w.writeheader()
+#     w.writerows(P)
+       
+with open('Prof_data.csv','w') as f:
+    w = csv.writer(f)
+    w.writerows(P.items())    
 
